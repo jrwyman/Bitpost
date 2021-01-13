@@ -1,0 +1,9 @@
+.news-article-list {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.news-article {
+  margin-bottom: 20px;
+  border-bottom: solid gray;
+}

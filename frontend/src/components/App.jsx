@@ -6,10 +6,10 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container-fluid">
       <CurrentPrice />
       <NewsFeed />
-      <div className="api-credit-message">
+      <div className="text-center">
         Powered by
         <a href="https://www.coindesk.com/price/bitcoin"> CoinDesk</a>
       </div>
