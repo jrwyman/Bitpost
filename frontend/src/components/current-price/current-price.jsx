@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import dayjs from 'dayjs';
 import axios from 'axios';
 
 import './current-price.css';
+
+const localizedFormat = require('dayjs/plugin/localizedFormat');
+
+dayjs.extend(localizedFormat);
 
 function CurrentPrice() {
   const [price, setPrice] = useState(null);
@@ -17,11 +22,11 @@ function CurrentPrice() {
   });
 
   return (
-    <div className="current-price-page">
-      <div className="current-price-message">
-        {`The current price of Bitcoin as of ${time}`}
-      </div>
-      <div className="current-price">{price}</div>
+    <div className="container-fluid current-price-page" align="center">
+      <h2 className="text-center">
+        {`The current price of Bitcoin as of ${dayjs(time).format('L LT')}`}
+      </h2>
+      <h1 className="current-price">{price}</h1>
     </div>
   );
 }
