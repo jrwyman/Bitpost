@@ -16,7 +16,7 @@ function NavBar() {
           <Link to="/market-data">Market Data</Link>
         </li>
         <li className="col-1 link">
-          <Link to="/about">About</Link>
+          <Link to="/coin-list">Coin List</Link>
         </li>
       </ul>
     </nav>
