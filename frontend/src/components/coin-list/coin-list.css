@@ -1,0 +1,17 @@
+.coin-list {
+  background-color: white;
+  padding-top: 10px;
+}
+
+.coin {
+  margin-bottom: 20px;
+}
+
+.coin-image {
+  height: 35px;
+  width: 15%;
+}
+
+.coin-name {
+  padding: 5px;
+}
