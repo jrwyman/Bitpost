@@ -26,7 +26,7 @@ function Graph({ data }) {
         <YAxis dataKey="price" />
         <Tooltip />
         <CartesianGrid stroke="#f5f5f5" />
-        <Line type="monotone" dataKey="price" dot={false} yAxisId={0} />
+        <Line type="monotone" dataKey="price" dot={false} />
       </LineChart>
     </div>
   );

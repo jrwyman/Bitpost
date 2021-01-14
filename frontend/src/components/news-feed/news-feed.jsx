@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import CurrentPrice from '../current-price/current-price';
 import Graph from '../graph/graph';
 import Articles from '../articles/articles';
 import './news-feed.css';
@@ -83,6 +84,9 @@ function NewsFeed() {
 
   return (
     <div className="container news-feed-page" align="center">
+      <div className="row current-price">
+        <CurrentPrice />
+      </div>
       <div className="row" align="center">
         <div className="col">
           {renderDateBox()}
