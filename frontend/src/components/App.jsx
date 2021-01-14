@@ -7,6 +7,8 @@ import {
 
 import NavBar from './navbar/navbar';
 import NewsFeed from './news-feed/news-feed';
+import CoinList from './coin-list/coin-list';
+
 import './App.css';
 
 function App() {
@@ -17,9 +19,8 @@ function App() {
         <Route exact path="/">
           <div>NOTHING</div>
         </Route>
-        <Route exact path="/market-data" component={NewsFeed}>
-          <NewsFeed />
-        </Route>
+        <Route exact path="/market-data" component={NewsFeed} />
+        <Route exact path="/coin-list" component={CoinList} />
       </Switch>
       <div className="text-center">
         Powered by

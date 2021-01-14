@@ -35,11 +35,29 @@ function NewsFeed() {
   }
 
   async function fetchData() {
-    const articlesUrl = `http://api.datanews.io/v1/news?q=bitcoin&&from=${dateRange.from}&to=${dateRange.to}&size=25&sortBy=date&language=en&apiKey=0955zkguk3uqog56tt8o43ulu`;
-    const pricesUrl = `https://api.coindesk.com/v1/bpi/historical/close.json?start=${dateRange.from}&end=${dateRange.to}`;
-    const articlesResponse = await axios.get(articlesUrl);
+    const articlesResponse = await axios({
+      method: 'get',
+      url: 'http://api.datanews.io/v1/news',
+      headers: null,
+      params: {
+        apiKey: '0955zkguk3uqog56tt8o43ulu',
+        size: 10,
+        sortBy: 'date',
+        language: 'en',
+        from: dateRange.from,
+        to: dateRange.to,
+      },
+    });
     setArticles(articlesResponse.data);
-    const pricesResponse = await axios.get(pricesUrl);
+
+    const pricesResponse = await axios({
+      method: 'get',
+      url: 'https://api.coindesk.com/v1/bpi/historical/close.json',
+      params: {
+        start: dateRange.from,
+        end: dateRange.to,
+      },
+    });
     setPrices(parseData(pricesResponse.data));
   }
 
