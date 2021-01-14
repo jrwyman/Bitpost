@@ -1,5 +1,7 @@
 .news-feed-page {
   background-color: white;
+  padding-top: 20px;
+  margin-top: 60px;
 }
 
 .date-box {
@@ -8,4 +10,8 @@
 
 .date-box-submit {
   margin: 20px;
+}
+
+.current-price {
+  margin-bottom: 10px;
 }
