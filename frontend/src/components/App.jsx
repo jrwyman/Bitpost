@@ -8,6 +8,7 @@ import {
 import NavBar from './navbar/navbar';
 import NewsFeed from './news-feed/news-feed';
 import CoinList from './coin-list/coin-list';
+import Home from './home/home';
 
 import './App.css';
 
@@ -16,9 +17,7 @@ function App() {
     <Router>
       <NavBar />
       <Switch>
-        <Route exact path="/">
-          <div>NOTHING</div>
-        </Route>
+        <Route exact path="/" component={Home} />
         <Route exact path="/market-data" component={NewsFeed} />
         <Route exact path="/coin-list" component={CoinList} />
       </Switch>
