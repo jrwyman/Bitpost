@@ -1,6 +1,6 @@
 .coin-list {
   background-color: white;
-  padding-top: 10px;
+
 }
 
 .coin {
@@ -14,4 +14,14 @@
 
 .coin-name {
   padding: 5px;
+}
+
+.coin-headers {
+  background-color: lightgray;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.coin-headers div {
+  padding-left: 40px;
 }
