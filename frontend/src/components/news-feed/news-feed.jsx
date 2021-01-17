@@ -35,20 +35,19 @@ function NewsFeed() {
   }
 
   async function fetchData() {
-    const articlesResponse = await axios({
-      method: 'get',
-      url: 'http://api.datanews.io/v1/news',
-      headers: null,
-      params: {
-        apiKey: '0955zkguk3uqog56tt8o43ulu',
-        size: 10,
-        sortBy: 'date',
-        language: 'en',
-        from: dateRange.from,
-        to: dateRange.to,
-      },
-    });
-    setArticles(articlesResponse.data);
+    const articlesResponse = async () => {
+      const response = await axios({
+        method: 'get',
+        url: '/api/articles',
+        params: {
+          start: dateRange.from,
+          to: dateRange.to,
+        },
+      });
+      return response;
+    };
+    const result = await articlesResponse();
+    setArticles(result.data);
 
     const pricesResponse = await axios({
       method: 'get',
