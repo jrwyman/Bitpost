@@ -1,15 +1,15 @@
 {
-  "name": "backend",
+  "name": "bitpost",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "backend/server.js",
+  "repository": "https://github.com/jrwyman/Bitpost.git",
+  "author": "jrwyman <jacobwyman1995@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
     "express": "^4.17.1",
     "nodemon": "^2.0.7"
   }
