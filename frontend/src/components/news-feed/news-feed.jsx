@@ -38,11 +38,11 @@ function NewsFeed() {
     const articlesResponse = await axios({
       method: 'get',
       url: 'http://api.datanews.io/v1/news',
-      headers: {
-        'x-api-key': '0955zkguk3uqog56tt8o43ulu',
-      },
+      // headers: {
+      //   'x-api-key': '0955zkguk3uqog56tt8o43ulu',
+      // },
       params: {
-        // apiKey: '0955zkguk3uqog56tt8o43ulu',
+        apiKey: '0955zkguk3uqog56tt8o43ulu',
         size: 10,
         sortBy: 'date',
         language: 'en',
