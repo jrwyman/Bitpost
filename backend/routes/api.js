@@ -10,6 +10,7 @@ router.get('/articles', async (req, res) => {
       'x-api-key': '0955zkguk3uqog56tt8o43ulu',
     },
     params: {
+      q: req.query.q,
       size: 10,
       sortBy: 'date',
       language: 'en',

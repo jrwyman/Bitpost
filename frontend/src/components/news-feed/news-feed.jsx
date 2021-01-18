@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import dayjs from 'dayjs';
 
 import CurrentPrice from '../current-price/current-price';
 import Graph from '../graph/graph';
@@ -7,6 +8,8 @@ import Articles from '../articles/articles';
 import './news-feed.css';
 
 function NewsFeed() {
+  const [coin, setCoin] = useState('bitcoin');
+
   const [articles, setArticles] = useState({
     numResults: 0,
     hits: [],
@@ -27,10 +30,10 @@ function NewsFeed() {
       numResults: 0,
       hits: [],
     };
-    Object.keys(data.bpi).forEach((date) => {
-      response.hits.push({ priceDate: date, price: data.bpi[date] });
+    data.prices.forEach((pair) => {
+      response.hits.push({ priceDate: dayjs(pair[0]).format('L'), price: pair[1] });
     });
-    response.numResults = Object.keys(data.bpi).length;
+    response.numResults = data.prices.length;
     return response;
   }
 
@@ -40,7 +43,8 @@ function NewsFeed() {
         method: 'get',
         url: '/api/articles',
         params: {
-          start: dateRange.from,
+          q: coin,
+          from: dateRange.from,
           to: dateRange.to,
         },
       });
@@ -51,10 +55,10 @@ function NewsFeed() {
 
     const pricesResponse = await axios({
       method: 'get',
-      url: 'https://api.coindesk.com/v1/bpi/historical/close.json',
+      url: `https://api.coingecko.com/api/v3/coins/${coin}/market_chart/range?vs_currency=usd`,
       params: {
-        start: dateRange.from,
-        end: dateRange.to,
+        from: dayjs(dateRange.from).unix(),
+        to: dayjs(dateRange.to).unix(),
       },
     });
     setPrices(parseData(pricesResponse.data));
@@ -95,6 +99,10 @@ function NewsFeed() {
     );
   }
 
+  function updateSelect(e) {
+    setCoin(e.target.value);
+  }
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -102,16 +110,22 @@ function NewsFeed() {
   return (
     <div className="container news-feed-page" align="center">
       <div className="row current-price">
-        <CurrentPrice />
+        <CurrentPrice coin={coin} />
       </div>
       <div className="row" align="center">
         <div className="col">
           {renderDateBox()}
           <Graph data={prices.hits} />
+          <select className="coin-select" onChange={updateSelect}>
+            <option value="bitcoin">Bitcoin (BTC)</option>
+            <option value="ethereum">Ethereum (ETH)</option>
+            <option value="bitcoin-cash">Bitcoin Cash (BCH)</option>
+            <option value="stellar">Stellar (XLM)</option>
+          </select>
           <button className="date-box-submit" type="submit" onClick={fetchData}>Get Market Data</button>
         </div>
         <div className="col">
-          <Articles articles={articles} />
+          <Articles coin={coin} articles={articles} />
         </div>
       </div>
     </div>
