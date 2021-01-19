@@ -8,7 +8,8 @@ import './navbar.css';
 function NavBar() {
   return (
     <nav>
-      <ul className="row">
+      <ul className="row nav-links">
+        <h1 className="col-4 logo"><a href="/">Bitpost</a></h1>
         <li className="col-1 link">
           <Link to="/">Home</Link>
         </li>

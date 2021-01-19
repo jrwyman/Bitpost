@@ -8,6 +8,19 @@ import Articles from '../articles/articles';
 import './news-feed.css';
 
 function NewsFeed() {
+  const [coinList, setCoinList] = useState({
+    numResults: 0,
+    hits: [],
+  });
+
+  function parseCoinListData(data) {
+    const response = {
+      numResults: data.length,
+      hits: data,
+    };
+    return response;
+  }
+
   const [coin, setCoin] = useState('bitcoin');
 
   const [articles, setArticles] = useState({
@@ -38,6 +51,20 @@ function NewsFeed() {
   }
 
   async function fetchData() {
+    const coinListResponse = await axios({
+      method: 'get',
+      url: ' https://api.coingecko.com/api/v3/coins/markets',
+      headers: null,
+      params: {
+        vs_currency: 'usd',
+        order: 'market_cap_desc',
+        per_page: 100,
+        page: 1,
+        sparkline: false,
+      },
+    });
+    setCoinList(parseCoinListData(coinListResponse.data));
+
     const articlesResponse = async () => {
       const response = await axios({
         method: 'get',
@@ -117,10 +144,11 @@ function NewsFeed() {
           {renderDateBox()}
           <Graph data={prices.hits} />
           <select className="coin-select" onChange={updateSelect}>
-            <option value="bitcoin">Bitcoin (BTC)</option>
-            <option value="ethereum">Ethereum (ETH)</option>
-            <option value="bitcoin-cash">Bitcoin Cash (BCH)</option>
-            <option value="stellar">Stellar (XLM)</option>
+            {
+              coinList.hits.map((listCoin) => (
+                <option value={listCoin.id}>{`${listCoin.name} (${listCoin.symbol.toUpperCase()})`}</option>
+              ))
+            }
           </select>
         </div>
         <div className="col articles">

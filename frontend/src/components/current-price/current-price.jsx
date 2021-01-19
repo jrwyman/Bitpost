@@ -27,9 +27,9 @@ function CurrentPrice({ coin }) {
   return (
     <div className="container-fluid current-price-page" align="center">
       <h2 className="text-center">
-        {`The current price of ${coin} as of ${dayjs(time).format('L LT')}`}
+        {`The current price of ${coin.replace(/^\w/, (c) => c.toUpperCase())} as of ${dayjs(time).format('L LT')}`}
       </h2>
-      <h1 className="current-price">{numeral(price).format('$0,0[.]00')}</h1>
+      <h1 className="current-price">{numeral(price).format('$0,0[.][00000000]')}</h1>
     </div>
   );
 }
