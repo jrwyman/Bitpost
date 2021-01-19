@@ -8,8 +8,8 @@ nav {
 }
 
 .link {
+  align-self: center;
   list-style-type: none;
-  margin-top: 20px;
   margin-left: 20px;
   text-align: center;
 }
@@ -17,4 +17,15 @@ nav {
 nav a {
   color: black;
   text-decoration: none;
+}
+
+.nav-links {
+  margin-bottom: 0;
+}
+
+.logo {
+  align-self: bottom;
+  /* margin-left: 100px;
+  margin-right: 200px; */
+  font-family: Andale Mono, monospace;
 }
