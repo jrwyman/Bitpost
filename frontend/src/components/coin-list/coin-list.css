@@ -2,6 +2,11 @@
   background-color: white;
 }
 
+.mobile-coin-list {
+  background-color: white;
+  font-size: 9px;
+}
+
 .coin {
   margin-bottom: 20px;
 }
@@ -9,10 +14,6 @@
 .coin-image {
   height: 35px;
   width: 15%;
-}
-
-.coin-name {
-  padding: 5px;
 }
 
 .coin-headers {
@@ -23,4 +24,8 @@
 
 .coin-headers div {
   padding-left: 40px;
+}
+
+.mobile-coin-rank {
+  width: 0;
 }

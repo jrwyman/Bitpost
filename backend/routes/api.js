@@ -11,8 +11,8 @@ router.get('/articles', async (req, res) => {
     },
     params: {
       q: req.query.q,
-      size: 10,
-      sortBy: 'date',
+      size: 100,
+      sortBy: 'relevance',
       language: 'en',
       from: req.query.from,
       to: req.query.to,
