@@ -105,7 +105,7 @@ function NewsFeed() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [coin]);
 
   return (
     <div className="container news-feed-page" align="center">
@@ -122,9 +122,8 @@ function NewsFeed() {
             <option value="bitcoin-cash">Bitcoin Cash (BCH)</option>
             <option value="stellar">Stellar (XLM)</option>
           </select>
-          <button className="date-box-submit" type="submit" onClick={fetchData}>Get Market Data</button>
         </div>
-        <div className="col">
+        <div className="col articles">
           <Articles coin={coin} articles={articles} />
         </div>
       </div>
