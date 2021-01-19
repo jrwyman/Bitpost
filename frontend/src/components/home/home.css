@@ -1,0 +1,24 @@
+.home-text {
+  align-self: center;
+}
+
+.home-text h1 h2 p {
+  text-align: left;
+}
+
+.home-header {
+  color: rgb(85, 125, 235);
+  font-family: Andale Mono, monospace;
+}
+
+.home-subheader {
+  color: blue;
+}
+
+.home-paragraph {
+  color: black;
+}
+
+.home-button {
+  border-radius: 20px;
+}

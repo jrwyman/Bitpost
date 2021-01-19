@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import axios from 'axios';
 import dayjs from 'dayjs';
 
@@ -8,6 +9,8 @@ import Articles from '../articles/articles';
 import './news-feed.css';
 
 function NewsFeed() {
+  const isTablet = useMediaQuery({ query: '(max-width: 991px)' });
+
   const [coinList, setCoinList] = useState({
     numResults: 0,
     hits: [],
@@ -111,13 +114,13 @@ function NewsFeed() {
         <div className="row">
           <div className="col form-group">
             <label htmlFor="fromDate">
-              {'Start Date: '}
+              {'Start '}
               <input id="fromDate" type="date" value={dateRange.from} onChange={updateFrom} placeholder="YYYY-MM-DD" />
             </label>
           </div>
           <div className="col form-group">
             <label htmlFor="toDate">
-              {'End Date: '}
+              {'End '}
               <input id="toDate" type="date" value={dateRange.to} onChange={updateTo} placeholder="YYYY-MM-DD" />
             </label>
           </div>
@@ -151,7 +154,7 @@ function NewsFeed() {
             }
           </select>
         </div>
-        <div className="col articles">
+        <div className={isTablet ? 'row articles' : 'col articles'}>
           <Articles coin={coin} articles={articles} />
         </div>
       </div>

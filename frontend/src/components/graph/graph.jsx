@@ -15,7 +15,7 @@ function Graph({ data }) {
   return (
     <div className="container graph">
       <LineChart
-        width={isMobile ? 200 : 400}
+        width={isMobile ? 250 : 400}
         height={isMobile ? 200 : 400}
         data={data}
         margin={{

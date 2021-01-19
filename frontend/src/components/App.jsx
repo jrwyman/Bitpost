@@ -16,16 +16,18 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/market-data" component={NewsFeed} />
-        <Route exact path="/coin-list" component={CoinList} />
-      </Switch>
+      <div className="page">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/market-data" component={NewsFeed} />
+          <Route exact path="/coin-list" component={CoinList} />
+        </Switch>
+      </div>
       <div className="text-center footer">
-        Powered by
-        <a href="https://www.coingecko.com/"> CoinGecko </a>
-        and
-        <a href="https://datanews.io/"> Datanews.io</a>
+        {'Powered by '}
+        <a href="https://www.coingecko.com/">CoinGecko </a>
+        {'and '}
+        <a href="https://datanews.io/">Datanews.io</a>
       </div>
     </Router>
   );
