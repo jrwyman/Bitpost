@@ -153,6 +153,7 @@ function NewsFeed() {
               ))
             }
           </select>
+          <button type="submit" className="btn btn-primary" onClick={fetchData}>Get Market Data</button>
         </div>
         <div className={isTablet ? 'row articles' : 'col articles'}>
           <Articles coin={coin} articles={articles} />

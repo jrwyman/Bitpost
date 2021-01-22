@@ -32,8 +32,9 @@ nav a {
 }
 
 .logo {
-  align-self: bottom;
-  /* margin-left: 100px;
-  margin-right: 200px; */
   font-family: Andale Mono, monospace;
+}
+
+.mobile-links:before {
+  content: none;
 }
