@@ -149,7 +149,7 @@ function NewsFeed() {
           <select className="coin-select" onChange={updateSelect}>
             {
               coinList.hits.map((listCoin) => (
-                <option value={listCoin.id}>{`${listCoin.name} (${listCoin.symbol.toUpperCase()})`}</option>
+                <option key={listCoin.id} value={listCoin.id}>{`${listCoin.name} (${listCoin.symbol.toUpperCase()})`}</option>
               ))
             }
           </select>
