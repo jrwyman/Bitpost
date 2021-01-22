@@ -149,10 +149,11 @@ function NewsFeed() {
           <select className="coin-select" onChange={updateSelect}>
             {
               coinList.hits.map((listCoin) => (
-                <option value={listCoin.id}>{`${listCoin.name} (${listCoin.symbol.toUpperCase()})`}</option>
+                <option key={listCoin.id} value={listCoin.id}>{`${listCoin.name} (${listCoin.symbol.toUpperCase()})`}</option>
               ))
             }
           </select>
+          <button type="submit" className="btn btn-primary" onClick={fetchData}>Get Market Data</button>
         </div>
         <div className={isTablet ? 'row articles' : 'col articles'}>
           <Articles coin={coin} articles={articles} />

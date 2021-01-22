@@ -13,7 +13,7 @@ function Articles({ articles }) {
     <ol className="news-article-list">
       {
         Object.keys(articles.hits).map((key) => (
-          <div className="news-article">
+          <div key={key} className="news-article">
             <p>
               <a href={articles.hits[key].url} target="_blank" rel="noreferrer">{articles.hits[key].title}</a>
             </p>
