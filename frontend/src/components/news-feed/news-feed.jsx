@@ -11,18 +11,12 @@ import './news-feed.css';
 function NewsFeed() {
   const isTablet = useMediaQuery({ query: '(max-width: 991px)' });
 
+  const [sortMethod, setSortMethod] = useState('relevance');
+
   const [coinList, setCoinList] = useState({
     numResults: 0,
     hits: [],
   });
-
-  function parseCoinListData(data) {
-    const response = {
-      numResults: data.length,
-      hits: data,
-    };
-    return response;
-  }
 
   const [coin, setCoin] = useState('bitcoin');
 
@@ -40,6 +34,14 @@ function NewsFeed() {
     from: '2020-01-01',
     to: '2021-01-01',
   });
+
+  function parseCoinListData(data) {
+    const response = {
+      numResults: data.length,
+      hits: data,
+    };
+    return response;
+  }
 
   function parseData(data) {
     const response = {
@@ -73,6 +75,7 @@ function NewsFeed() {
         method: 'get',
         url: '/api/articles',
         params: {
+          sortBy: sortMethod,
           q: coin,
           from: dateRange.from,
           to: dateRange.to,
@@ -135,7 +138,7 @@ function NewsFeed() {
 
   useEffect(() => {
     fetchData();
-  }, [coin]);
+  }, [coin, sortMethod]);
 
   return (
     <div className="container news-feed-page" align="center">
@@ -156,6 +159,10 @@ function NewsFeed() {
           <button type="submit" className="btn btn-primary" onClick={fetchData}>Get Market Data</button>
         </div>
         <div className={isTablet ? 'row articles' : 'col articles'}>
+          <select id="sortBy-select" className="row sortBy-select" onChange={(e) => setSortMethod(e.target.value)}>
+            <option value="relevance">Sort By Relevance</option>
+            <option value="date">Sort By Date</option>
+          </select>
           <Articles coin={coin} articles={articles} />
         </div>
       </div>
