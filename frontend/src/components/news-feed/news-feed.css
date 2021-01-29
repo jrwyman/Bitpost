@@ -13,9 +13,3 @@
 .current-price {
   margin-bottom: 10px;
 }
-
-.articles {
-  height: 562px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}

@@ -1,6 +1,9 @@
 .news-article-list {
   text-align: left;
+  height: 562px;
   margin-top: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .news-article {
