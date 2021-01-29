@@ -13,10 +13,10 @@ function NavBar() {
       <nav>
         <ul className="row mobile-nav-links">
           <h1 className="col-4 logo"><a href="/">Bitpost</a></h1>
-          <Dropdown className="col-8" align="center">
-            <Dropdown.Toggle bsPrefix="btn">
+          <Dropdown className="col-8 drop-down" align="center">
+            <Dropdown.Toggle bsPrefix="hamburger-button btn">
               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-              <i className="fa fa-bars" />
+              <i className="fa fa-bars hamburger-icon" />
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="/">Home</Dropdown.Item>

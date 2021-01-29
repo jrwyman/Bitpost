@@ -1,6 +1,6 @@
 nav {
   background-color: #F4F5F7;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   border: solid lightgray;
@@ -14,12 +14,32 @@ nav {
   text-align: center;
 }
 
-.mobile-link {
-  align-self: center;
-  list-style-type: none;
-  margin-left: 25px;
-  text-align: center;
-  font-size: 10px;
+.drop-down {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.hamburger-button {
+  background-color: #F4F5F7;
+  border-color: #F4F5F7;
+}
+
+.hamburger-button:focus {
+  background-color: #F4F5F7;
+  border-color: #F4F5F7;
+}
+
+.hamburger-button:hover {
+  background-color: #F4F5F7;
+  border-color: #F4F5F7;
+}
+
+.hamburger-icon {
+  color: black;
+}
+
+.mobile-nav-links {
+  margin: auto;
 }
 
 nav a {
@@ -33,6 +53,8 @@ nav a {
 
 .logo {
   font-family: Andale Mono, monospace;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .mobile-links:before {
