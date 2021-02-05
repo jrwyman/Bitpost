@@ -2,6 +2,12 @@
   align-self: center;
 }
 
+.home-image {
+  max-width: 100%;
+  height: auto;
+  align-self: flex-start;
+}
+
 .home-text h1 h2 p {
   text-align: left;
 }

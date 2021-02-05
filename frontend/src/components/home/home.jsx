@@ -18,7 +18,7 @@ function Home() {
           <Link to="/market-data" className="btn btn-primary home-button">Start Here</Link>
         </div>
         <div className={isMobile ? 'row home-logo' : 'col home-logo'}>
-          <img src={logo} alt="home-logo" />
+          <img className="home-image" src={logo} alt="home-logo" />
         </div>
 
       </div>
