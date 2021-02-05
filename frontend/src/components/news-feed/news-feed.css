@@ -2,6 +2,10 @@
   background-color: white;
 }
 
+.articles {
+  margin: auto;
+}
+
 .date-box {
   margin-top: 20px;
 }
@@ -12,4 +16,11 @@
 
 .current-price {
   margin-bottom: 10px;
+}
+
+.sortBy-select {
+  max-width: 251px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
 }

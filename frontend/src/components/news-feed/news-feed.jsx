@@ -159,7 +159,7 @@ function NewsFeed() {
           <button type="submit" className="btn btn-primary" onClick={fetchData}>Get Market Data</button>
         </div>
         <div className={isTablet ? 'row articles' : 'col articles'}>
-          <select id="sortBy-select" className="row sortBy-select" onChange={(e) => setSortMethod(e.target.value)}>
+          <select className="col-sm-4 sortBy-select" onChange={(e) => setSortMethod(e.target.value)}>
             <option value="relevance">Sort By Relevance</option>
             <option value="date">Sort By Date</option>
           </select>
