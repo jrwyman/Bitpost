@@ -19,6 +19,7 @@ function NewsFeed() {
   });
 
   const [coin, setCoin] = useState('bitcoin');
+  const [symbol, setSymbol] = useState('BTC');
 
   const [articles, setArticles] = useState({
     numResults: 0,
@@ -31,8 +32,8 @@ function NewsFeed() {
   });
 
   const [dateRange, setDateRange] = useState({
-    from: '2020-01-01',
-    to: '2021-01-01',
+    from: dayjs(Date()).startOf('month').format('YYYY-MM-DD'),
+    to: dayjs(Date()).format('YYYY-MM-DD'),
   });
 
   function parseCoinListData(data) {
@@ -76,7 +77,7 @@ function NewsFeed() {
         url: '/api/articles',
         params: {
           sortBy: sortMethod,
-          q: coin,
+          q: `${coin} ${symbol}`,
           from: dateRange.from,
           to: dateRange.to,
         },
@@ -133,7 +134,9 @@ function NewsFeed() {
   }
 
   function updateSelect(e) {
-    setCoin(e.target.value);
+    const params = e.target.value.split(',');
+    setCoin(params[0]);
+    setSymbol(params[1]);
   }
 
   useEffect(() => {
@@ -152,7 +155,7 @@ function NewsFeed() {
           <select className="coin-select" onChange={updateSelect}>
             {
               coinList.hits.map((listCoin) => (
-                <option key={listCoin.id} value={listCoin.id}>{`${listCoin.name} (${listCoin.symbol.toUpperCase()})`}</option>
+                <option key={listCoin.id} value={[listCoin.id, listCoin.symbol]}>{`${listCoin.name} (${listCoin.symbol.toUpperCase()})`}</option>
               ))
             }
           </select>
