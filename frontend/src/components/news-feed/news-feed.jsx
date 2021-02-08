@@ -31,8 +31,8 @@ function NewsFeed() {
   });
 
   const [dateRange, setDateRange] = useState({
-    from: '2020-01-01',
-    to: '2021-01-01',
+    from: dayjs(Date()).startOf('month').format('YYYY-MM-DD'),
+    to: dayjs(Date()).format('YYYY-MM-DD'),
   });
 
   function parseCoinListData(data) {
