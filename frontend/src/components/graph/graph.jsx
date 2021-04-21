@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from 'react-responsive';
 import {
   ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts';
@@ -8,14 +8,14 @@ import {
 import './graph.css';
 
 function Graph({ data }) {
-  // const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
-  // const isTablet = useMediaQuery({ query: '(max-width: 1224px)' });
-  // const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
+  const isMobile = useMediaQuery({ query: '(max-width:400px)' });
 
   return (
     <div className="container graph" align="center">
-      <ResponsiveContainer width="99%">
+      <ResponsiveContainer width="99%" height={isMobile ? 200 : 400}>
         <LineChart
+          width={200}
+          height={200}
           data={data}
           margin={{
             top: 5, right: 20, left: 10, bottom: 5,
