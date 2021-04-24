@@ -1,26 +1,35 @@
 .news-feed-page {
+  /* background-color: white; */
+  background-color: #F4F5F7;
+  padding: 3vw;
+}
+
+.Graph {
+  border: 1px solid lightgray;
   background-color: white;
+  padding-top: 1vw;
+  padding-bottom: 3vw;
+  margin-bottom: 3vw;
+  height: 700px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
-.articles {
-  margin: auto;
-}
-
-.date-box {
-  margin-top: 20px;
+.Articles {
+  border: 1px solid lightgray;
+  background-color: white;
+  padding-top: 1vw;
+  padding-bottom: 3vw;
+  margin-bottom: 3vw;
+  height: 700px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
 .coin-select {
-  margin: 10px;
-}
-
-.current-price {
-  margin-bottom: 10px;
-}
-
-.sortBy-select {
   max-width: 251px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
+}
+
+.articles-select {
+  max-width: 251px;
 }

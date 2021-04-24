@@ -1,12 +1,18 @@
 .news-article-list {
   text-align: left;
   height: 562px;
-  margin-top: 20px;
+  margin: auto;
+  /* margin-top: 20px; */
   overflow-x: hidden;
   overflow-y: scroll;
+  border: 1px solid lightgray;
+  padding: 4vw;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
 .news-article {
+  margin: auto;
   margin-bottom: 20px;
   border-bottom: solid gray;
 }

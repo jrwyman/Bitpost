@@ -1,26 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
 
 import logo from './homepagelogo.png';
 import './home.css';
 
 function Home() {
-  const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
-
   return (
-    <div className="container home-page">
-      <div className="row">
-        <div className="col home-text">
+    <div className="container-fluid home-page">
+      <div className="row w-100">
+        <div className="col-md-6 home-text" align="left">
           <h1 className="home-header">Reliable Market Data</h1>
           <h3 className="home-subheader">Free access to charts and news articles</h3>
           <p className="home-paragraph">Bitpost gives you the freedom to analyze bitcoin as well as dozens of other top cryptocurrencies with the click of a button.</p>
-          <Link to="/market-data" className="btn btn-primary home-button">Start Here</Link>
+          <a href="/market-data">
+            <button className="btn btn-primary home-button" type="button">Start Here</button>
+          </a>
         </div>
-        <div className={isMobile ? 'row home-logo' : 'col home-logo'}>
+        <div className="col-md-6 home-logo" align="center">
           <img className="home-image" src={logo} alt="home-logo" />
         </div>
-
       </div>
     </div>
   );

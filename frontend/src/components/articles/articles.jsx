@@ -10,7 +10,7 @@ dayjs.extend(localizedFormat);
 
 function Articles({ articles }) {
   return (
-    <ol className="news-article-list">
+    <div className="container news-article-list">
       {
         Object.keys(articles.hits).map((key) => (
           <div key={key} className="news-article">
@@ -22,7 +22,7 @@ function Articles({ articles }) {
           </div>
         ))
       }
-    </ol>
+    </div>
   );
 }
 

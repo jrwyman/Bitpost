@@ -1,11 +1,16 @@
+.home-page {
+  margin-top: 2vw;
+}
+
 .home-text {
+  padding-left: 5vw;
   align-self: center;
 }
 
 .home-image {
   max-width: 100%;
   height: auto;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .home-text h1 h2 p {
